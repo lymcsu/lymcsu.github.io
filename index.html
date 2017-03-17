@@ -247,7 +247,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/my-first-blog/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/15/talk-about-bfc/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="eamon Lee">
@@ -269,7 +269,7 @@
             
               
                 
-                <a class="post-title-link" href="/2017/03/15/my-first-blog/" itemprop="url">
+                <a class="post-title-link" href="/2017/03/15/talk-about-bfc/" itemprop="url">
                   BFC那些事
                 </a>
               
@@ -324,7 +324,19 @@
       
         
           
-            
+            <p>今天就用BFC这个经常被面试官提及的问题来开始我的第一篇Blog吧！</p>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>弄清BFC之前首先需要了解FC的概念，FC（formatting context）直译就是格式化上下文，它的本质是一个页面中的一块渲染区域，其中有一套渲染规则来规定里面的元素应该怎么渲染。现在常见的FC有BFC（block formatting context）以及IFC（inline formatting context）。BFC是块级盒子参与的渲染区域，IFC是行级盒子参与的渲染区域。<br>说到这里，再来提一下这个块级盒子的概念，块级盒子就是display 属性为 block, list-item, table 的元素，会生成 block-level box，参与BFC渲染。下面要给出BFC的一个定义，属于个人理解。</p>
+<h1 id="BFC的定义"><a href="#BFC的定义" class="headerlink" title="BFC的定义"></a>BFC的定义</h1><p>BFC是页面内一个独立的渲染区域，只有块级盒子能参与其中，并且它拥有一套渲染规则，规定了内部的块级盒子如何布局。同时，BFC内外互不影响。</p>
+<h1 id="BFC的作用"><a href="#BFC的作用" class="headerlink" title="BFC的作用"></a>BFC的作用</h1><p>说起BFC的作用，也许很容易和清除浮动混淆，实际上清除浮动只是它的作用之一。概括的说它主要有3个用途：</p>
+<ul>
+<li>用于布局</li>
+<li>用于清除浮动</li>
+<li>用于避免margin重叠<br>我们一个一个说<h3 id="1-左右两栏固定中间自适应宽度布局"><a href="#1-左右两栏固定中间自适应宽度布局" class="headerlink" title="1.左右两栏固定中间自适应宽度布局"></a>1.左右两栏固定中间自适应宽度布局</h3>代码：’&lt;!DOCTYPE html&gt;<br><html><br>  <head><pre><code>&lt;title&gt;test&lt;/title&gt;
+</code></pre>  </head><br>  <body><pre><code>&lt;div style=&quot;width: 200px;height: 200px; float: left; background: blue&quot;&gt;&lt;/div&gt;
+&lt;div style=&quot;height: 300px; background: orange&quot;&gt;&lt;/div&gt;
+</code></pre>  </body><br></html>‘</li>
+</ul>
+
           
         
       
