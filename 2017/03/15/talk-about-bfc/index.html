@@ -92,21 +92,21 @@
 <meta property="og:type" content="article">
 <meta property="og:title" content="BFC那些事">
 <meta property="og:url" content="http://yoursite.com/2017/03/15/talk-about-bfc/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="民谣码农">
 <meta property="og:description" content="今天就用BFC这个经常被面试官提及的问题来开始我的第一篇Blog吧！
 前言　　弄清BFC之前首先需要了解FC的概念，FC（formatting context）直译就是格式化上下文，它的本质是页面中的一块渲染区域，其中有一套渲染规则来规定里面的元素应该怎么渲染。现在常见的FC有BFC（block formatting context）以及IFC（inline formatting context）">
-<meta property="og:image" content="http://yoursite.com/../img/buju1.png">
-<meta property="og:image" content="http://yoursite.com/../img/buju2.png">
-<meta property="og:image" content="http://yoursite.com/../img/clearfix1.png">
-<meta property="og:image" content="http://yoursite.com/../img/clearfix2.png">
-<meta property="og:image" content="http://yoursite.com/../img/margin1.png">
-<meta property="og:image" content="http://yoursite.com/../img/margin2.png">
-<meta property="og:updated_time" content="2017-03-17T07:29:16.085Z">
+<meta property="og:image" content="http://yoursite.com/../../../../img/buju1.png">
+<meta property="og:image" content="http://yoursite.com/../../../../img/buju2.png">
+<meta property="og:image" content="http://yoursite.com/../../../../img/clearfix1.png">
+<meta property="og:image" content="http://yoursite.com/../../../../img/clearfix2.png">
+<meta property="og:image" content="http://yoursite.com/../../../../img/margin1.png">
+<meta property="og:image" content="http://yoursite.com/../../../../img/margin2.png">
+<meta property="og:updated_time" content="2017-03-18T03:11:11.491Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BFC那些事">
 <meta name="twitter:description" content="今天就用BFC这个经常被面试官提及的问题来开始我的第一篇Blog吧！
 前言　　弄清BFC之前首先需要了解FC的概念，FC（formatting context）直译就是格式化上下文，它的本质是页面中的一块渲染区域，其中有一套渲染规则来规定里面的元素应该怎么渲染。现在常见的FC有BFC（block formatting context）以及IFC（inline formatting context）">
-<meta name="twitter:image" content="http://yoursite.com/../img/buju1.png">
+<meta name="twitter:image" content="http://yoursite.com/../../../../img/buju1.png">
 
 
 
@@ -140,7 +140,7 @@
 
 
 
-  <title> BFC那些事 | Hexo </title>
+  <title> BFC那些事 | 民谣码农 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -176,12 +176,12 @@
     <div class="custom-logo-site-title">
       <a href="/"  class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
-        <span class="site-title">Hexo</span>
+        <span class="site-title">民谣码农</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
       
-        <p class="site-subtitle"></p>
+        <p class="site-subtitle">to be a real fe and enjoy folk</p>
       
   </div>
 
@@ -264,11 +264,11 @@
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="eamon Lee">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="image" content="/../img/pic.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
+      <meta itemprop="name" content="民谣码农">
     </span>
 
     
@@ -356,16 +356,16 @@
 <li><strong>用于清除浮动</strong></li>
 <li><strong>用于避免margin重叠</strong></li>
 </ul>
-<h4 id="1-左侧固定右侧自适应宽度布局"><a href="#1-左侧固定右侧自适应宽度布局" class="headerlink" title="1.左侧固定右侧自适应宽度布局"></a>1.左侧固定右侧自适应宽度布局</h4><p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;title&gt;test&lt;/title&gt;</div><div class="line">		&lt;style&gt;</div><div class="line">			.left&#123;</div><div class="line">				width: 200px;</div><div class="line">				height: 200px;</div><div class="line">				float: left;</div><div class="line">				background: blue;</div><div class="line">			&#125;</div><div class="line">			.main&#123;</div><div class="line">				height: 300px;</div><div class="line">				background: orange;</div><div class="line">			&#125;</div><div class="line">		&lt;/style&gt;</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;div class=&quot;left&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;main&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图：<br><img src="../img/buju1.png" alt="布局效果图"><br>根据上面说到BFC渲染的第3条规则，BFC内部元素的左边会与包含块的左边相接触，即使浮动依然如此。所以图中两个左右div的左边都与包含块左边接触。此时我们如果需要实现右侧自适应宽度而不与左侧浮动元素重叠，则需要将右侧的元素触发BFC。</p>
-<p>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.main&#123;</div><div class="line">	height: 300px;</div><div class="line">	background: orange;</div><div class="line">	overflow: hidden;  //触发BFC</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>效果图：<br><img src="../img/buju2.png" alt="布局效果图"><br>使用overflow: hidden触发.main的BFC后，根据BFC渲染的第4条规则BFC的区域不会与float box重叠，从而得到自适应宽度布局。</p>
-<h4 id="2-清除浮动"><a href="#2-清除浮动" class="headerlink" title="2.清除浮动"></a>2.清除浮动</h4><p>代码；<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		.child&#123;</div><div class="line">			float: left;</div><div class="line">			width: 100%;</div><div class="line">			height: 100px;</div><div class="line">			border: 5px solid orange;</div><div class="line">		&#125;</div><div class="line">		.parent&#123;</div><div class="line">			width: 500px;</div><div class="line">			padding: 20px;</div><div class="line">			border: 5px solid blue;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;parent&quot;&gt;</div><div class="line">		&lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;child&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图：<br><img src="../img/clearfix1.png" alt="清除浮动效果图"><br>此时的.parent并没有触发BFC所以其内部的浮动元素不会参与计算其高度。如果我们触发.parent的BFC后，根据BFC渲染规则的第6条，内部浮动元素将参与计算高度。<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">	width: 500px;</div><div class="line">	padding: 20px;</div><div class="line">	border: 5px solid blue;</div><div class="line">	overflow: hidden;     //触发BFC</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>效果图：<br><img src="../img/clearfix2.png" alt="清除浮动效果图"></p>
-<h4 id="3-避免margin重叠"><a href="#3-避免margin重叠" class="headerlink" title="3.避免margin重叠"></a>3.避免margin重叠</h4><p>　　margin重叠现象会发生在相邻两个块级元素的上下边界。当两个垂直margin相遇时，它们将形成一个margin。这个margin的高度等于两个发生叠加的margin的高度中较大者。这是由于BFC渲染规则的第2条Box垂直方向的距离由margin决定，属于同一个BFC的两个相邻Box的margin会发生重叠。<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;html&gt;</div><div class="line">&lt;head&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		.box&#123;</div><div class="line">			width: 300px;</div><div class="line">			height: 100px;</div><div class="line">			background: orange;</div><div class="line">			margin: 20px 0;</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;parent&quot;&gt;</div><div class="line">		&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图：<br><img src="../img/margin1.png" alt="margin效果图"><br>上图中两个box的上下边界本应该有40px的距离，但是由于发生了边界重叠所以只有20px。要避免这种情况，我们可以根据BFC渲染规则第5点：BFC是个独立的区域，其内外布局互不影响这条来解决。<br>代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;head&gt;</div><div class="line">	&lt;style&gt;</div><div class="line">		.box&#123;</div><div class="line">			width: 300px;</div><div class="line">			height: 100px;</div><div class="line">			background: orange;</div><div class="line">			margin: 20px 0;</div><div class="line">		&#125;</div><div class="line">		.box-container&#123;</div><div class="line">			overflow: hidden;     //触发BFC</div><div class="line">		&#125;</div><div class="line">	&lt;/style&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">	&lt;div class=&quot;parent&quot;&gt;</div><div class="line">		&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;div class=&quot;box-container&quot;&gt;</div><div class="line">			&lt;div class=&quot;box&quot;&gt;&lt;/div&gt;</div><div class="line">		&lt;/div&gt;</div><div class="line">	&lt;/div&gt;</div><div class="line">&lt;/body&gt;</div></pre></td></tr></table></figure></p>
-<p>效果图：<br><img src="../img/margin2.png" alt="maigin效果图"><br>如上图可以看到，当我们给其中一个box外层套上一个触发BFC的box-container之后，两个box就分别在BFC的内部和外部，这样二者的布局就互不影响了，解决了margin重叠的问题。</p>
+<h4 id="1-左侧固定右侧自适应宽度布局"><a href="#1-左侧固定右侧自适应宽度布局" class="headerlink" title="1.左侧固定右侧自适应宽度布局"></a>1.左侧固定右侧自适应宽度布局</h4><p>代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">title</span>&gt;</span>test<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">			.left&#123;</div><div class="line">				width: 200px;</div><div class="line">				height: 200px;</div><div class="line">				float: left;</div><div class="line">				background: blue;</div><div class="line">			&#125;</div><div class="line">			.main&#123;</div><div class="line">				height: 300px;</div><div class="line">				background: orange;</div><div class="line">			&#125;</div><div class="line">		<span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"left"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="../../../../img/buju1.png" alt="布局效果图"><br>根据上面说到BFC渲染的第3条规则，BFC内部元素的左边会与包含块的左边相接触，即使浮动依然如此。所以图中两个左右div的左边都与包含块左边接触。此时我们如果需要实现右侧自适应宽度而不与左侧浮动元素重叠，则需要将右侧的元素触发BFC。</p>
+<p>代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">.main&#123;</div><div class="line">	height: 300px;</div><div class="line">	background: orange;</div><div class="line">	overflow: hidden;  //触发BFC</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="../../../../img/buju2.png" alt="布局效果图"><br>使用overflow: hidden触发.main的BFC后，根据BFC渲染的第4条规则BFC的区域不会与float box重叠，从而得到自适应宽度布局。</p>
+<h4 id="2-清除浮动"><a href="#2-清除浮动" class="headerlink" title="2.清除浮动"></a>2.清除浮动</h4><p>代码；<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">		<span class="selector-class">.child</span>&#123;</div><div class="line">			<span class="attribute">float</span>: left;</div><div class="line">			<span class="attribute">width</span>: <span class="number">100%</span>;</div><div class="line">			<span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">			<span class="attribute">border</span>: <span class="number">5px</span> solid orange;</div><div class="line">		&#125;</div><div class="line">		<span class="selector-class">.parent</span>&#123;</div><div class="line">			<span class="attribute">width</span>: <span class="number">500px</span>;</div><div class="line">			<span class="attribute">padding</span>: <span class="number">20px</span>;</div><div class="line">			<span class="attribute">border</span>: <span class="number">5px</span> solid blue;</div><div class="line">		&#125;</div><div class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"child"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="../../../../img/clearfix1.png" alt="清除浮动效果图"><br>此时的.parent并没有触发BFC所以其内部的浮动元素不会参与计算其高度。如果我们触发.parent的BFC后，根据BFC渲染规则的第6条，内部浮动元素将参与计算高度。<br>代码：<br><figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">.parent&#123;</div><div class="line">	width: 500px;</div><div class="line">	padding: 20px;</div><div class="line">	border: 5px solid blue;</div><div class="line">	overflow: hidden;     //触发BFC</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="../../../../img/clearfix2.png" alt="清除浮动效果图"></p>
+<h4 id="3-避免margin重叠"><a href="#3-避免margin重叠" class="headerlink" title="3.避免margin重叠"></a>3.避免margin重叠</h4><p>　　margin重叠现象会发生在相邻两个块级元素的上下边界。当两个垂直margin相遇时，它们将形成一个margin。这个margin的高度等于两个发生叠加的margin的高度中较大者。这是由于BFC渲染规则的第2条Box垂直方向的距离由margin决定，属于同一个BFC的两个相邻Box的margin会发生重叠。<br>代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="css"></span></div><div class="line">		<span class="selector-class">.box</span>&#123;</div><div class="line">			<span class="attribute">width</span>: <span class="number">300px</span>;</div><div class="line">			<span class="attribute">height</span>: <span class="number">100px</span>;</div><div class="line">			<span class="attribute">background</span>: orange;</div><div class="line">			<span class="attribute">margin</span>: <span class="number">20px</span> <span class="number">0</span>;</div><div class="line">		&#125;</div><div class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="../../../../img/margin1.png" alt="margin效果图"><br>上图中两个box的上下边界本应该有40px的距离，但是由于发生了边界重叠所以只有20px。要避免这种情况，我们可以根据BFC渲染规则第5点：BFC是个独立的区域，其内外布局互不影响这条来解决。<br>代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">		.box&#123;</div><div class="line">			width: 300px;</div><div class="line">			height: 100px;</div><div class="line">			background: orange;</div><div class="line">			margin: 20px 0;</div><div class="line">		&#125;</div><div class="line">		.box-container&#123;</div><div class="line">			overflow: hidden;     //触发BFC</div><div class="line">		&#125;</div><div class="line">	<span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"parent"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box-container"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>效果图：<br><img src="../../../../img/margin2.png" alt="maigin效果图"><br>如上图可以看到，当我们给其中一个box外层套上一个触发BFC的box-container之后，两个box就分别在BFC的内部和外部，这样二者的布局就互不影响了，解决了margin重叠的问题。</p>
 
       
     </div>
@@ -408,8 +408,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/03/15/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/07/05/http_1/" rel="next" title="HTTP协议的一些问题和解答">
+                <i class="fa fa-chevron-left"></i> HTTP协议的一些问题和解答
               </a>
             
           </div>
@@ -476,7 +476,7 @@
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
+               src="/../img/pic.jpg"
                alt="eamon Lee" />
           <p class="site-author-name" itemprop="name">eamon Lee</p>
            
@@ -488,7 +488,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -501,7 +501,7 @@
             
             <div class="site-state-item site-state-tags">
               
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">标签</span>
               
             </div>
