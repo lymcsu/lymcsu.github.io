@@ -93,12 +93,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/03/18/module/index.html">
 <meta property="og:site_name" content="民谣码农">
 <meta property="og:description" content="前言在js的语法中其实是没有模块化这个概念的，但是在前端干的事情越来越多之后，前端js代码已经显得十分臃肿难以管理，且很容易发生命名冲突的问题。这时候就不得不想办法实现模块化开发，使得模块与模块之间互不相扰，每个模块专注干自己的事情。然后在其他需要用到的地方可以简单的引用加载，提高复用开发效率，造轮子。">
-<meta property="og:image" content="http://yoursite.com/../../../../module.jgp">
-<meta property="og:updated_time" content="2017-03-18T08:52:58.386Z">
+<meta property="og:image" content="http://yoursite.com/../../../../img/module.jpg">
+<meta property="og:updated_time" content="2017-03-18T08:59:07.514Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="javascript模块化">
 <meta name="twitter:description" content="前言在js的语法中其实是没有模块化这个概念的，但是在前端干的事情越来越多之后，前端js代码已经显得十分臃肿难以管理，且很容易发生命名冲突的问题。这时候就不得不想办法实现模块化开发，使得模块与模块之间互不相扰，每个模块专注干自己的事情。然后在其他需要用到的地方可以简单的引用加载，提高复用开发效率，造轮子。">
-<meta name="twitter:image" content="http://yoursite.com/../../../../module.jgp">
+<meta name="twitter:image" content="http://yoursite.com/../../../../img/module.jpg">
 
 
 
@@ -331,7 +331,7 @@
 <p>如上将模块包装在一个对象中，这样可以解决命名冲突的问题，但是又有另一个问题：模块外可以访问到模块内部的变量和函数，并且可以随意修改，没有私有成员可言。</p>
 <h4 id="自执行函数"><a href="#自执行函数" class="headerlink" title="自执行函数"></a>自执行函数</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> model = (<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	<span class="keyword">var</span> m1 = <span class="number">1</span>;</div><div class="line">	...</div><div class="line">&#125;)()</div></pre></td></tr></table></figure>
 <p>这样的写法可以避免全局污染且不会暴露私有成员。这是模块的基本写法，下面介绍模块化现有的几种规范。</p>
-<h3 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h3><p><img src="../../../../module.jgp" alt="模块化规范"></p>
+<h3 id="模块化规范"><a href="#模块化规范" class="headerlink" title="模块化规范"></a>模块化规范</h3><p><img src="../../../../img/module.jpg" width="300" align="center"></p>
 <h4 id="commonJS"><a href="#commonJS" class="headerlink" title="commonJS"></a>commonJS</h4><p>conmmonJS是运行在服务器端的模块化规范，也就是node的模块化规范。</p>
 <blockquote>
 <p>示例<br>假如有一个dog模块<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> dog = <span class="built_in">require</span>(<span class="string">"dog"</span>);</div><div class="line">dog.say(<span class="string">"wang"</span>);</div></pre></td></tr></table></figure></p>
