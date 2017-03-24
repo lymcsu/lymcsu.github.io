@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="storage,cookie," />
+  <meta name="keywords" content="拖放," />
 
 
 
@@ -87,34 +87,16 @@
 
 
 
-<meta name="description" content="浏览器端存储数据的用途很广泛，比如在保存用户信息、存储个性化设置信息、保存某种状态或是资料等方面都会用到。其中方法主要有三种:
-
-cookie
-sessionStorage
-localStorage
-
-下面主要讨论一下我在学习过程中发现这三者的区别。">
+<meta name="description" content="HTML5标准提供了一个实现元素拖放的API，初步使用了一下做个记录。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="浏览器端存储的方式比较">
-<meta property="og:url" content="http://yoursite.com/2016/05/19/store/index.html">
+<meta property="og:title" content="HTML5拖放API">
+<meta property="og:url" content="http://yoursite.com/2017/03/22/drag/index.html">
 <meta property="og:site_name" content="民谣码农">
-<meta property="og:description" content="浏览器端存储数据的用途很广泛，比如在保存用户信息、存储个性化设置信息、保存某种状态或是资料等方面都会用到。其中方法主要有三种:
-
-cookie
-sessionStorage
-localStorage
-
-下面主要讨论一下我在学习过程中发现这三者的区别。">
-<meta property="og:updated_time" content="2017-03-18T04:05:47.616Z">
+<meta property="og:description" content="HTML5标准提供了一个实现元素拖放的API，初步使用了一下做个记录。">
+<meta property="og:updated_time" content="2017-03-24T05:30:32.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="浏览器端存储的方式比较">
-<meta name="twitter:description" content="浏览器端存储数据的用途很广泛，比如在保存用户信息、存储个性化设置信息、保存某种状态或是资料等方面都会用到。其中方法主要有三种:
-
-cookie
-sessionStorage
-localStorage
-
-下面主要讨论一下我在学习过程中发现这三者的区别。">
+<meta name="twitter:title" content="HTML5拖放API">
+<meta name="twitter:description" content="HTML5标准提供了一个实现元素拖放的API，初步使用了一下做个记录。">
 
 
 
@@ -142,13 +124,13 @@ localStorage
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/05/19/store/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/03/22/drag/"/>
 
 
 
 
 
-  <title> 浏览器端存储的方式比较 | 民谣码农 </title>
+  <title> HTML5拖放API | 民谣码农 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -267,7 +249,7 @@ localStorage
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/19/store/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/22/drag/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="eamon Lee">
@@ -288,7 +270,7 @@ localStorage
             
             
               
-                浏览器端存储的方式比较
+                HTML5拖放API
               
             
           </h1>
@@ -303,8 +285,8 @@ localStorage
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-19T21:49:22+08:00">
-                2016-05-19
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-22T14:46:32+08:00">
+                2017-03-22
               </time>
             
 
@@ -322,8 +304,8 @@ localStorage
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2016/05/19/store/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/19/store/" itemprop="commentCount"></span>
+                <a href="/2017/03/22/drag/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/22/drag/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -349,32 +331,16 @@ localStorage
       
 
       
-        <p>浏览器端存储数据的用途很广泛，比如在保存用户信息、存储个性化设置信息、保存某种状态或是资料等方面都会用到。其中方法主要有三种:</p>
-<ul>
-<li>cookie</li>
-<li>sessionStorage</li>
-<li>localStorage</li>
-</ul>
-<p>下面主要讨论一下我在学习过程中发现这三者的区别。</p>
+        <p>HTML5标准提供了一个实现元素拖放的API，初步使用了一下做个记录。</p>
 <a id="more"></a>
-<h4 id="是否与服务器端交互："><a href="#是否与服务器端交互：" class="headerlink" title="是否与服务器端交互："></a>是否与服务器端交互：</h4><ul>
-<li>cookie数据始终在同源的http请求中携带（即使不需要），即cookie在浏览器和服务器间来回传递；</li>
-<li>sessionStorage和localStorage不会自动把数据发给服务器，仅在本地保存。</li>
-</ul>
-<h4 id="存储大小限制："><a href="#存储大小限制：" class="headerlink" title="存储大小限制："></a>存储大小限制：</h4><ul>
-<li>cookie存储的数据不能超过4k，同时因为每次http请求都会携带cookie，所以cookie只适合保存很小的数据，比如会话标识；</li>
-<li>sessionStorage和localStorage 虽然也有存储大小的限制，但比cookie大得多，可以达到5M或更大。</li>
-</ul>
-<h4 id="数据有效期不同："><a href="#数据有效期不同：" class="headerlink" title="数据有效期不同："></a>数据有效期不同：</h4><ul>
-<li>sessionStorage仅在当前浏览器窗口关闭或刷新前有效，需要持久保存的数据自然也就不可能使用sessionStorage；</li>
-<li>localStorage保存数据始终有效，窗口或浏览器关闭也一直保存，因此可用作持久保存数据</li>
-<li>cookie只在开发人员设置的有效期时间之前一直有效，即使窗口或浏览器关闭。</li>
-</ul>
-<h4 id="作用域不同："><a href="#作用域不同：" class="headerlink" title="作用域不同："></a>作用域不同：</h4><ul>
-<li>sessionStorage在不同的浏览器窗口中不能共享，即使是同源页面；</li>
-<li>localStorage 在所有浏览器的同源窗口中都是共享的；</li>
-<li>cookie也是在所有同源窗口中都是共享的。</li>
-</ul>
+<h2 id="功能简介"><a href="#功能简介" class="headerlink" title="功能简介"></a>功能简介</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">function allowDrop(ev)</div><div class="line">&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">&#125;</div><div class="line"></div><div class="line">function drag(ev)</div><div class="line">&#123;</div><div class="line">    ev.dataTransfer.setData("Text",ev.target.id);</div><div class="line">&#125;</div><div class="line"></div><div class="line">function drop(ev)</div><div class="line">&#123;</div><div class="line">    ev.preventDefault();</div><div class="line">    var data=ev.dataTransfer.getData("Text");</div><div class="line">    ev.target.appendChild(document.getElementById(data));</div><div class="line">&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"div1"</span> <span class="attr">ondrop</span>=<span class="string">"drop(event)"</span> <span class="attr">ondragover</span>=<span class="string">"allowDrop(event)"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">id</span>=<span class="string">"drag1"</span> <span class="attr">src</span>=<span class="string">"img_logo.gif"</span> <span class="attr">draggable</span>=<span class="string">"true"</span> <span class="attr">ondragstart</span>=<span class="string">"drag(event)"</span> <span class="attr">width</span>=<span class="string">"336"</span> <span class="attr">height</span>=<span class="string">"69"</span> /&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这段代码是W3C上的拖放实现示例，我们一步步来分析。<br>首先，img标签上有一个draggable=”true”属性，该属性用来定义一个元素是否可拖拽。只有该属性为true的元素可以触发dragstart事件。然后定义了一个drag函数来处理dragstart事件。<br>drag函数中：</p>
+<blockquote>
+<p>ev.dataTransfer.setData(“Text”,ev.target.id);</p>
+</blockquote>
+<p>这句代码用到了事件的dataTransfer对象，dataTransfer拥有setData(“dataType”,data)方法。其中第一个参数是指定数据的类型，第二个参数是具体的数据。<br>然后在div标签上有两个事件处理，dragover事件是在元素拖拽至该元素上时触发，由于默认处理方式是无法将数据/元素放置到其他元素中。如果需要设置允许放置，我们必须阻止对元素的默认处理方式。所以使用ev.preventDefault()来处理。drop事件是在元素放置时触发，同理也需要阻止默认处理，然后就可以通过dataTransfer对象的getData(“dataType”,data)方法来获取传递过来的数据。然后再对获得的数据按照自己的需求做进一步处理。<br>这就是拖放的原理，看完了这些刚好项目中的一个指标选择功能需要用到拖放，小试牛刀。</p>
+<h2 id="实战用例"><a href="#实战用例" class="headerlink" title="实战用例"></a>实战用例</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">$(<span class="string">".compPopList tbody tr"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		makeDraggable($(<span class="keyword">this</span>).get()[<span class="number">0</span>])</div><div class="line">	&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">makeDraggable</span>(<span class="params">el</span>) </span>&#123;</div><div class="line">		<span class="keyword">var</span> elem = $(el)</div><div class="line">		<span class="keyword">var</span> dataObj = &#123;</div><div class="line">			<span class="attr">id</span>: elem.attr(<span class="string">"id"</span>),</div><div class="line">			<span class="attr">name</span>: elem.children(<span class="string">"td:eq(0)"</span>).text(),</div><div class="line">			<span class="attr">type</span>: elem.attr(<span class="string">"data-type"</span>)</div><div class="line">		&#125;</div><div class="line">		el.addEventListener(<span class="string">'dragstart'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line">			ev.dataTransfer.setData(<span class="string">"Text"</span>, <span class="built_in">JSON</span>.stringify(dataObj));</div><div class="line">		&#125;, <span class="literal">false</span>);</div><div class="line">	&#125;</div><div class="line">$(<span class="string">".compPopSelect-item"</span>).each(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">		getDrop($(<span class="keyword">this</span>).get()[<span class="number">0</span>])</div><div class="line">	&#125;);</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getDrop</span>(<span class="params">el</span>) </span>&#123;</div><div class="line">		el.addEventListener(<span class="string">'drop'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line">			ev.preventDefault();</div><div class="line">			<span class="keyword">var</span> dataObj = <span class="built_in">JSON</span>.parse(ev.dataTransfer.getData(<span class="string">"Text"</span>));</div><div class="line">			dosomething <span class="keyword">with</span> dataObj...;</div><div class="line">		&#125;, <span class="literal">false</span>);</div><div class="line">		el.addEventListener(<span class="string">'dragover'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">ev</span>) </span>&#123;</div><div class="line">			ev.preventDefault();</div><div class="line">		&#125;, <span class="literal">false</span>);</div><div class="line">	&#125;</div></pre></td></tr></table></figure>
+<p>注意到上面代码中使用了jquery对象，但绑定事件却是用的原生方法。这是因为如果使用jq绑定事件则event为jq事件。但是jq事件中没有封装dataTransfer对象，所以用上面的方法做处理。</p>
 
       
     </div>
@@ -404,9 +370,7 @@ localStorage
       
         <div class="post-tags">
           
-            <a href="/tags/storage/" rel="tag"># storage</a>
-          
-            <a href="/tags/cookie/" rel="tag"># cookie</a>
+            <a href="/tags/拖放/" rel="tag"># 拖放</a>
           
         </div>
       
@@ -419,15 +383,15 @@ localStorage
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/03/19/call/" rel="next" title="call,apply,bind三者用法">
+                <i class="fa fa-chevron-left"></i> call,apply,bind三者用法
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/05/31/iframe/" rel="prev" title="使用iframe框架的优缺点">
-                使用iframe框架的优缺点 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -565,7 +529,7 @@ var duoshuoQuery = {short_name:"lymcsu"};
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#是否与服务器端交互："><span class="nav-number">1.</span> <span class="nav-text">是否与服务器端交互：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#存储大小限制："><span class="nav-number">2.</span> <span class="nav-text">存储大小限制：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数据有效期不同："><span class="nav-number">3.</span> <span class="nav-text">数据有效期不同：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#作用域不同："><span class="nav-number">4.</span> <span class="nav-text">作用域不同：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#功能简介"><span class="nav-number">1.</span> <span class="nav-text">功能简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#实战用例"><span class="nav-number">2.</span> <span class="nav-text">实战用例</span></a></li></ol></div>
             
 
           </div>
