@@ -247,6 +247,193 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/25/git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="eamon Lee">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/../img/pic.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="民谣码农">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2017/03/25/git/" itemprop="url">
+                  git常用的几个命令
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-03-25T18:13:35+08:00">
+                2017-03-25
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/03/25/git/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/03/25/git/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>项目使用git作为版本控制工具，记录几条常用的命令，足够正常使用。</p>
+<h2 id="新建配置相关"><a href="#新建配置相关" class="headerlink" title="新建配置相关"></a>新建配置相关</h2><p>在当前目录新建一个Git代码库</p>
+<blockquote>
+<p><strong>git init</strong></p>
+</blockquote>
+<p>新建一个目录，将其初始化为Git代码库</p>
+<blockquote>
+<p><strong>git init [project-name]</strong></p>
+</blockquote>
+<p>下载一个项目和它的整个代码历史</p>
+<blockquote>
+<p><strong>git clone [url]</strong></p>
+</blockquote>
+<p>设置提交代码时的用户信息</p>
+<blockquote>
+<p><strong>git config [–global] user.name “[name]”</strong><br>  <strong>git config [–global] user.email “[email address]”</strong></p>
+</blockquote>
+<h2 id="拉取相关"><a href="#拉取相关" class="headerlink" title="拉取相关"></a>拉取相关</h2><p>将线上版本同步到本地但不会自动merge；</p>
+<blockquote>
+<p><strong>git fetch</strong></p>
+</blockquote>
+<p>将线上版本同步到本地并merge，若有未缓存文件会提示将被覆盖并停止同步；</p>
+<blockquote>
+<p><strong>git pull</strong></p>
+</blockquote>
+<p>查看该文件与线上版本的不同</p>
+<blockquote>
+<p><strong>git diff filepath</strong></p>
+</blockquote>
+<h2 id="提交相关"><a href="#提交相关" class="headerlink" title="提交相关"></a>提交相关</h2><p>查看当前目录中跟踪已修改和未跟踪的文件</p>
+<blockquote>
+<p><strong>git status</strong></p>
+</blockquote>
+<p>将该文件加入缓存</p>
+<blockquote>
+<p><strong>git add filepath</strong></p>
+</blockquote>
+<p>将该文件提交到本地，并提交相关描述</p>
+<blockquote>
+<p><strong>git commit filepath -m “describe”</strong></p>
+</blockquote>
+<p>将本地缓存文件提交至线上服务器</p>
+<blockquote>
+<p><strong>git push</strong></p>
+</blockquote>
+<h2 id="回溯相关"><a href="#回溯相关" class="headerlink" title="回溯相关"></a>回溯相关</h2><p>恢复暂存区的指定文件到工作区</p>
+<blockquote>
+<p><strong>git checkout [file]</strong></p>
+</blockquote>
+<p>重置暂存区的指定文件，与上一次commit保持一致，但工作区不变</p>
+<blockquote>
+<p><strong>git reset [file]</strong></p>
+</blockquote>
+<p>重置暂存区与工作区，与上一次commit保持一致</p>
+<blockquote>
+<p><strong>git reset –hard</strong></p>
+</blockquote>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/22/drag/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1456,150 +1643,13 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/05/19/store/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="eamon Lee">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/../img/pic.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="民谣码农">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/05/19/store/" itemprop="url">
-                  浏览器端存储的方式比较
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-05-19T21:49:22+08:00">
-                2016-05-19
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2016/05/19/store/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/05/19/store/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>浏览器端存储数据的用途很广泛，比如在保存用户信息、存储个性化设置信息、保存某种状态或是资料等方面都会用到。其中方法主要有三种:</p>
-<ul>
-<li>cookie</li>
-<li>sessionStorage</li>
-<li>localStorage</li>
-</ul>
-<p>下面主要讨论一下我在学习过程中发现这三者的区别。</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2016/05/19/store/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
           
           </div>
@@ -1642,7 +1692,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -1655,7 +1705,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
