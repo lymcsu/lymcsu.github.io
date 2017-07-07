@@ -335,7 +335,7 @@
 <a id="more"></a>
 <h2 id="jsonp跨域"><a href="#jsonp跨域" class="headerlink" title="jsonp跨域"></a>jsonp跨域</h2><p>jsonp可以说是最常用的一种方式了。jsonp的实现需要前后端共同配置。它的原理是利用script标签可以跨域访问的特性，通过构造一个script标签，利用src属性将一个callback回调函数名作为参数传递给后台，后台取到这个回调函数名后，将需要返回的数据拼接成回调函数调用的形式再传回前端即可。</p>
 <blockquote>
-<p>前端代码示例<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span></div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">callbackFunc</span>(<span class="params"></span>)</span>&#123;</div><div class="line">		dosomething...</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://xxx.aaa.com/bb?callback=callbackFunc"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>前端代码示例<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">	function callbackFunc()&#123;</div><div class="line">		dosomething...</div><div class="line">	&#125;</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"http://xxx.aaa.com/bb?callback=callbackFunc"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
 <p>后端代码<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">String callback = request.getParameters(<span class="string">"callback"</span>);</div><div class="line"><span class="keyword">int</span>[] data= <span class="keyword">new</span> <span class="keyword">int</span>[]&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>&#125;;</div><div class="line">out.print(callback + <span class="string">"("</span> + data + <span class="string">")"</span>);</div></pre></td></tr></table></figure></p>
 </blockquote>
 <p>这就是jsonp的原理，当然也可以使用jquery的ajax，但有一点jsonp只支持get请求。</p>
@@ -507,7 +507,7 @@ var duoshuoQuery = {short_name:"lymcsu"};
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-count">16</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -520,7 +520,7 @@ var duoshuoQuery = {short_name:"lymcsu"};
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">16</span>
+                <span class="site-state-item-count">17</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
