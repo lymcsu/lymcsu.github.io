@@ -270,7 +270,7 @@
               
                 
                 <a class="post-title-link" href="/2017/07/07/polling/" itemprop="url">
-                  轮询相关概念
+                  轮询、长轮询及WebSocket
                 </a>
               
             
@@ -333,13 +333,14 @@
 
       
         
-          
-            <p>轮询：客户端定时向服务器发送Ajax请求，服务器接到请求后马上返回响应信息并关闭连接。<br>优点：后端程序编写比较容易。<br>缺点：请求中有大半是无用，浪费带宽和服务器资源。<br>实例：适于小型应用。</p>
-<p>长轮询：客户端向服务器发送Ajax请求，服务器接到请求后hold住连接，直到有新消息才返回响应信息并关闭连接，客户端处理完响应信息后再向服务器发送新的请求。<br>优点：在无消息的情况下不会频繁的请求。<br>缺点：服务器hold连接会消耗资源。<br>实例：WebQQ、Hi网页版、Facebook IM。</p>
-<p>webSocket：<br>WebSocket使用ws或wss协议，可用于任意的客户端和服务器程序。其最伟大之处在于服务器和客户端可以在给定的时间范围内的任意时刻，相互推送信息。WebSocket并不限于以Ajax(或XHR)方式通信，因为Ajax技术需要客户端发起请求，而WebSocket服务器和客户端可以彼此相互推送信息；XHR受到域的限制，而WebSocket允许跨域通信。</p>
-<p>最基本的用法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建一个Socket实例</span></div><div class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8080'</span>); </div><div class="line"></div><div class="line"><span class="comment">// 打开Socket </span></div><div class="line">socket.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123; </div><div class="line"></div><div class="line">  <span class="comment">// 发送一个初始化消息</span></div><div class="line">  socket.send(<span class="string">'I am the client and I\'m listening!'</span>); </div><div class="line"></div><div class="line">  <span class="comment">// 监听消息</span></div><div class="line">  socket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Client received a message'</span>,event); </div><div class="line">  &#125;; </div><div class="line"></div><div class="line">  <span class="comment">// 监听Socket的关闭</span></div><div class="line">  socket.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Client notified socket has closed'</span>,event); </div><div class="line">  &#125;; </div><div class="line"></div><div class="line">  <span class="comment">// 关闭Socket.... </span></div><div class="line">  <span class="comment">//socket.close() </span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-
-          
+          <p>　　基于HTTP的长连接,是一种通过长轮询方式实现”服务器推”的技术,它弥补了HTTP简单的请求应答模式的不足,极大地增强了程序的实时性和交互性。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/07/polling/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
