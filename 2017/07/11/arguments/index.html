@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="轮询,webSocket," />
+  <meta name="keywords" content="arguments," />
 
 
 
@@ -87,16 +87,19 @@
 
 
 
-<meta name="description" content="基于HTTP的长连接,是一种通过长轮询方式实现”服务器推”的技术,它弥补了HTTP简单的请求应答模式的不足,极大地增强了程序的实时性和交互性。">
+<meta name="description" content="arguments是JS里函数中的一个特殊对象，它和数组很类似但不是真正的数组。
+arguments是什么arguments是函数里的一个内置对象，可以通过获取数组元素的方式来从arguments中获取函数的参数，如下：12345678function add(x, y)&amp;#123;	console.log(arguments[0]);	console.log(arguments[1]);	con">
 <meta property="og:type" content="article">
-<meta property="og:title" content="轮询、长轮询及WebSocket">
-<meta property="og:url" content="http://yoursite.com/2017/07/07/polling/index.html">
+<meta property="og:title" content="JS里的arguments对象">
+<meta property="og:url" content="http://yoursite.com/2017/07/11/arguments/index.html">
 <meta property="og:site_name" content="民谣码农">
-<meta property="og:description" content="基于HTTP的长连接,是一种通过长轮询方式实现”服务器推”的技术,它弥补了HTTP简单的请求应答模式的不足,极大地增强了程序的实时性和交互性。">
-<meta property="og:updated_time" content="2017-07-07T09:08:55.888Z">
+<meta property="og:description" content="arguments是JS里函数中的一个特殊对象，它和数组很类似但不是真正的数组。
+arguments是什么arguments是函数里的一个内置对象，可以通过获取数组元素的方式来从arguments中获取函数的参数，如下：12345678function add(x, y)&amp;#123;	console.log(arguments[0]);	console.log(arguments[1]);	con">
+<meta property="og:updated_time" content="2017-07-11T15:54:05.204Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="轮询、长轮询及WebSocket">
-<meta name="twitter:description" content="基于HTTP的长连接,是一种通过长轮询方式实现”服务器推”的技术,它弥补了HTTP简单的请求应答模式的不足,极大地增强了程序的实时性和交互性。">
+<meta name="twitter:title" content="JS里的arguments对象">
+<meta name="twitter:description" content="arguments是JS里函数中的一个特殊对象，它和数组很类似但不是真正的数组。
+arguments是什么arguments是函数里的一个内置对象，可以通过获取数组元素的方式来从arguments中获取函数的参数，如下：12345678function add(x, y)&amp;#123;	console.log(arguments[0]);	console.log(arguments[1]);	con">
 
 
 
@@ -124,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/07/polling/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/11/arguments/"/>
 
 
 
 
 
-  <title> 轮询、长轮询及WebSocket | 民谣码农 </title>
+  <title> JS里的arguments对象 | 民谣码农 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -249,7 +252,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/07/polling/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/11/arguments/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="eamon Lee">
@@ -270,7 +273,7 @@
             
             
               
-                轮询、长轮询及WebSocket
+                JS里的arguments对象
               
             
           </h1>
@@ -285,8 +288,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-07T13:19:42+08:00">
-                2017-07-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-11T23:19:32+08:00">
+                2017-07-11
               </time>
             
 
@@ -304,8 +307,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2017/07/07/polling/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/07/polling/" itemprop="commentCount"></span>
+                <a href="/2017/07/11/arguments/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2017/07/11/arguments/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -331,13 +334,14 @@
       
 
       
-        <p>　　基于HTTP的长连接,是一种通过长轮询方式实现”服务器推”的技术,它弥补了HTTP简单的请求应答模式的不足,极大地增强了程序的实时性和交互性。</p>
-<a id="more"></a>
-<h2 id="轮询"><a href="#轮询" class="headerlink" title="轮询"></a>轮询</h2><p><strong>概念</strong>：客户端定时向服务器发送Ajax请求，服务器接到请求后马上返回响应信息并关闭连接。<br><strong>优点</strong>：后端程序编写比较容易。<br><strong>缺点</strong>：请求中有大半是无用，浪费带宽和服务器资源。<br><strong>实例</strong>：适于小型应用。</p>
-<h2 id="长轮询"><a href="#长轮询" class="headerlink" title="长轮询"></a>长轮询</h2><p><strong>概念</strong>：客户端向服务器发送Ajax请求，服务器接到请求后hold住连接，直到有新消息才返回响应信息并关闭连接，客户端处理完响应信息后再向服务器发送新的请求。<br><strong>优点</strong>：在无消息的情况下不会频繁的请求。<br><strong>缺点</strong>：服务器hold连接会消耗资源。<br><strong>实例</strong>：WebQQ、Hi网页版、Facebook IM。</p>
-<h2 id="webSocket："><a href="#webSocket：" class="headerlink" title="webSocket："></a>webSocket：</h2><p>WebSocket使用ws或wss协议，可用于任意的客户端和服务器程序。其最伟大之处在于服务器和客户端可以在给定的时间范围内的任意时刻，相互推送信息。WebSocket并不限于以Ajax(或XHR)方式通信，因为Ajax技术需要客户端发起请求，而WebSocket服务器和客户端可以彼此相互推送信息；XHR受到域的限制，而WebSocket允许跨域通信。</p>
-<p>最基本的用法：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 创建一个Socket实例</span></div><div class="line"><span class="keyword">var</span> socket = <span class="keyword">new</span> WebSocket(<span class="string">'ws://localhost:8080'</span>); </div><div class="line"></div><div class="line"><span class="comment">// 打开Socket </span></div><div class="line">socket.onopen = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123; </div><div class="line"></div><div class="line">  <span class="comment">// 发送一个初始化消息</span></div><div class="line">  socket.send(<span class="string">'I am the client and I\'m listening!'</span>); </div><div class="line"></div><div class="line">  <span class="comment">// 监听消息</span></div><div class="line">  socket.onmessage = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Client received a message'</span>,event); </div><div class="line">  &#125;; </div><div class="line"></div><div class="line">  <span class="comment">// 监听Socket的关闭</span></div><div class="line">  socket.onclose = <span class="function"><span class="keyword">function</span>(<span class="params">event</span>) </span>&#123; </div><div class="line">    <span class="built_in">console</span>.log(<span class="string">'Client notified socket has closed'</span>,event); </div><div class="line">  &#125;; </div><div class="line"></div><div class="line">  <span class="comment">// 关闭Socket.... </span></div><div class="line">  <span class="comment">//socket.close() </span></div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
-
+        <p>arguments是JS里函数中的一个特殊对象，它和数组很类似但不是真正的数组。</p>
+<h2 id="arguments是什么"><a href="#arguments是什么" class="headerlink" title="arguments是什么"></a>arguments是什么</h2><p>arguments是函数里的一个内置对象，可以通过获取数组元素的方式来从arguments中获取函数的参数，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>]);</div><div class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">1</span>]);</div><div class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">2</span>]);</div><div class="line">	<span class="keyword">return</span> x + y;</div><div class="line">&#125;</div><div class="line"></div><div class="line">add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);  <span class="comment">//控制台输出1、2、3</span></div></pre></td></tr></table></figure></p>
+<p>从上面的代码可以看到arguments保存着函数执行时传入的参数，即使实参个数和形参个数不一致也不影响。</p>
+<h2 id="arguments里其他属性"><a href="#arguments里其他属性" class="headerlink" title="arguments里其他属性"></a>arguments里其他属性</h2><p>arguments中除了包含实参的列表外还有几个属性</p>
+<blockquote>
+<p>arguments.lenth —&gt; 该属性为实参的个数<br>arguments.callee —&gt; 该属性为函数本身的引用<br>arguments.callee.length —&gt; 该属性为形参的个数</p>
+</blockquote>
+<h2 id="arguments-caller"><a href="#arguments-caller" class="headerlink" title="arguments.caller"></a>arguments.caller</h2>
       
     </div>
 
@@ -366,7 +370,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/轮询-webSocket/" rel="tag"># 轮询,webSocket</a>
+            <a href="/tags/arguments/" rel="tag"># arguments</a>
           
         </div>
       
@@ -379,8 +383,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/04/29/this/" rel="next" title="JS中this的指向">
-                <i class="fa fa-chevron-left"></i> JS中this的指向
+              <a href="/2017/07/07/polling/" rel="next" title="轮询、长轮询及WebSocket">
+                <i class="fa fa-chevron-left"></i> 轮询、长轮询及WebSocket
               </a>
             
           </div>
@@ -388,10 +392,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/11/arguments/" rel="prev" title="JS里的arguments对象">
-                JS里的arguments对象 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -529,7 +529,7 @@ var duoshuoQuery = {short_name:"lymcsu"};
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#轮询"><span class="nav-number">1.</span> <span class="nav-text">轮询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长轮询"><span class="nav-number">2.</span> <span class="nav-text">长轮询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#webSocket："><span class="nav-number">3.</span> <span class="nav-text">webSocket：</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments是什么"><span class="nav-number">1.</span> <span class="nav-text">arguments是什么</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments里其他属性"><span class="nav-number">2.</span> <span class="nav-text">arguments里其他属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#arguments-caller"><span class="nav-number">3.</span> <span class="nav-text">arguments.caller</span></a></li></ol></div>
             
 
           </div>
