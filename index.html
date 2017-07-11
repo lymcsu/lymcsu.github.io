@@ -333,16 +333,14 @@
 
       
         
-          
-            <p>arguments是JS里函数中的一个特殊对象，它和数组很类似但不是真正的数组。</p>
-<h2 id="arguments是什么"><a href="#arguments是什么" class="headerlink" title="arguments是什么"></a>arguments是什么</h2><p>arguments是函数里的一个内置对象，可以通过获取数组元素的方式来从arguments中获取函数的参数，如下：<br><figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">add</span>(<span class="params">x, y</span>)</span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">0</span>]);</div><div class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">1</span>]);</div><div class="line">	<span class="built_in">console</span>.log(<span class="built_in">arguments</span>[<span class="number">2</span>]);</div><div class="line">	<span class="keyword">return</span> x + y;</div><div class="line">&#125;</div><div class="line"></div><div class="line">add(<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>);  <span class="comment">//控制台输出1、2、3</span></div></pre></td></tr></table></figure></p>
-<p>从上面的代码可以看到arguments保存着函数执行时传入的参数，即使实参个数和形参个数不一致也不影响。</p>
-<h2 id="arguments里其他属性"><a href="#arguments里其他属性" class="headerlink" title="arguments里其他属性"></a>arguments里其他属性</h2><p>arguments中除了包含实参的列表外还有几个属性</p>
-<blockquote>
-<p>arguments.lenth —&gt; 该属性为实参的个数<br>arguments.callee —&gt; 该属性为函数本身的引用<br>arguments.callee.length —&gt; 该属性为形参的个数</p>
-</blockquote>
-<h2 id="arguments-caller"><a href="#arguments-caller" class="headerlink" title="arguments.caller"></a>arguments.caller</h2>
-          
+          <p>arguments是JS里函数中的一个特殊对象，它和数组很类似但不是真正的数组。<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/11/arguments/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
