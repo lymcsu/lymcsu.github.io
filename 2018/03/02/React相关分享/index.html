@@ -94,10 +94,10 @@
 <meta property="og:site_name" content="民谣码农">
 <meta property="og:description" content="React相关分享React组件化基本原理react是近来十分火热的一个前端框架，它把注意力放在UI层，将页面分成一些细块，这些块就是组件，组件之间的组合嵌套就形成最后的网页界面。和其他很多前端框架一样，它们主要解决了前端组件化的问题。下面通过一个例子逐步探寻react的组件化原理。">
 <meta property="og:image" content="http://younth.github.io/img/react/render.png">
-<meta property="og:image" content="https://segmentfault.com/img/bVGUAL?w=850&h=316">
-<meta property="og:image" content="https://segmentfault.com/img/bVGUAR?w=843&h=309">
-<meta property="og:image" content="https://segmentfault.com/img/bVGUBc?w=846&h=309">
-<meta property="og:updated_time" content="2018-03-29T13:43:11.964Z">
+<meta property="og:image" content="http://yoursite.com/../../../../img/scu1.jpg">
+<meta property="og:image" content="http://yoursite.com/../../../../img/scu2.jpg">
+<meta property="og:image" content="http://yoursite.com/../../../../img/scu3.jpg">
+<meta property="og:updated_time" content="2018-03-29T14:12:22.522Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React相关分享">
 <meta name="twitter:description" content="React相关分享React组件化基本原理react是近来十分火热的一个前端框架，它把注意力放在UI层，将页面分成一些细块，这些块就是组件，组件之间的组合嵌套就形成最后的网页界面。和其他很多前端框架一样，它们主要解决了前端组件化的问题。下面通过一个例子逐步探寻react的组件化原理。">
@@ -450,9 +450,9 @@
 <h4 id="重写-SSR-api"><a href="#重写-SSR-api" class="headerlink" title="重写 SSR api"></a>重写 SSR api</h4><h4 id="依赖-Map、Set数据类型"><a href="#依赖-Map、Set数据类型" class="headerlink" title="依赖 Map、Set数据类型"></a>依赖 Map、Set数据类型</h4><p>v16版本开始依赖 Map 和 Set 数据类型，所以需要注意在低版本浏览器中使用时需要添加polyfill垫片库；</p>
 <p>v16开始有一个ReactElementValidator.js对元素工厂进行包装，主要对传递给组件的props进行验证，该文件中的 <code>new Map([[&#39;children&#39;, true], [&#39;key&#39;, true]])</code> 这句话，在ios8中会报错：<code>TypeError: Map constructor does not accept arguments</code> ，即Map函数不能接收参数。为了解决该问题需要将react及react-dom降级至v15.x.x。</p>
 <h2 id="React性能优化实例"><a href="#React性能优化实例" class="headerlink" title="React性能优化实例"></a>React性能优化实例</h2><p>在React中，组件的状态(state)或属性(props)改变都会导致整个组件的重新渲染，具体的更新流程如下图所示：<br><img src="http://younth.github.io/img/react/render.png" style="height: 400px;"><br><br><br>在首次渲染完成后，组件的属性/状态改变，会触发组件一系列的生命周期函数。从图中可以看出，SCU(shouldComponentUpdate)钩子十分关键，它决定了组件是否进行re-render去生成虚拟DOM。默认情况下，SCU都会返回true。看下面的例子：</p>
-<p>如果我们有图中结构的一个组件树，其中绿色的组件是我们需要更新的组件，但是它依赖于从祖父节点传下来的props来更新。<br><img src="https://segmentfault.com/img/bVGUAL?w=850&amp;h=316" alt="scu1"></p>
-<p>那么我们期望的更新方式是如下绿色的三个节点。祖父节点的某个state改变，然后将它以props的方式传递到孙子节点去更新它。<br><img src="https://segmentfault.com/img/bVGUAR?w=843&amp;h=309" alt="scu2"></p>
-<p>但是事实情况并不如我们所想，而是整个组件树都会进行re-render，然后生成虚拟DOM，再对虚拟DOM进行diff操作，若改变则更新，否则不更新。这样就会造成很多冗余的render和diff操作，图中黄色节点。<br><img src="https://segmentfault.com/img/bVGUBc?w=846&amp;h=309" alt="scu3"></p>
+<p>如果我们有图中结构的一个组件树，其中绿色的组件是我们需要更新的组件，但是它依赖于从祖父节点传下来的props来更新。<br><img src="../../../../img/scu1.jpg" alt="scu1"></p>
+<p>那么我们期望的更新方式是如下绿色的三个节点。祖父节点的某个state改变，然后将它以props的方式传递到孙子节点去更新它。<br><img src="../../../../img/scu2.jpg" alt="scu2"></p>
+<p>但是事实情况并不如我们所想，而是整个组件树都会进行re-render，然后生成虚拟DOM，再对虚拟DOM进行diff操作，若改变则更新，否则不更新。这样就会造成很多冗余的render和diff操作，图中黄色节点。<br><img src="../../../../img/scu3.jpg" alt="scu3"></p>
 <p>这时候我们就需要利用SCU来规避这种情况，但是SCU需要慎重使用，方式不当可能会造成数据改变但UI不变的bug，也可能导致更严重的性能问题。</p>
 <figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment">// 接收两个参数，分别为待更新的属性及状态值</span></div><div class="line">shouldComponentUpdate(nextProps, nextState) &#123;</div><div class="line">    <span class="comment">// 如果当前的value值与待更新不相等，才执行更新</span></div><div class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.props.value !== nextProps.value;</div><div class="line">    <span class="comment">// return this.state.user !== nextState.user;</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>上面是常用的方式，通过判断新的某个状态/属性与之前的值是否相等，来决定是否重新渲染。同时，React v15.3开始提供了一个叫做 PureComponent 的组件来替代 Component 来封装 shouldComponentUpdate 以达到上述目的。</p>
