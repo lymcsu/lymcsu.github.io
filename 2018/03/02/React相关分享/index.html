@@ -97,7 +97,7 @@
 <meta property="og:image" content="http://yoursite.com/../../../../img/scu1.jpg">
 <meta property="og:image" content="http://yoursite.com/../../../../img/scu2.jpg">
 <meta property="og:image" content="http://yoursite.com/../../../../img/scu3.jpg">
-<meta property="og:updated_time" content="2018-03-29T14:12:22.522Z">
+<meta property="og:updated_time" content="2018-03-29T15:18:48.279Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="React相关分享">
 <meta name="twitter:description" content="React相关分享React组件化基本原理react是近来十分火热的一个前端框架，它把注意力放在UI层，将页面分成一些细块，这些块就是组件，组件之间的组合嵌套就形成最后的网页界面。和其他很多前端框架一样，它们主要解决了前端组件化的问题。下面通过一个例子逐步探寻react的组件化原理。">
@@ -430,7 +430,7 @@
 <p>初次之外，vue中还提供了 computed 计算属性来监听某个属性从而计算出另一个属性的值。</p>
 <p><strong>React</strong></p>
 <p>在React中则没有提供类似 watch 这样的api。我们需要使用react组件的某些生命周期函数来间接的做到这一点。</p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">componentWillReceiveProps(object nextProps) &#123;</div><div class="line">	<span class="comment">//当props改变时，组件会执行获取新props的钩子函数，处理一些逻辑，但此处不应该setState</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">componentWillUpdate(object nextProps, object nextState) &#123;</div><div class="line">	<span class="comment">//当state改变时，组件会重新渲染，更新前的钩子函数中，可以拿到新的state和props处理一些逻辑</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">componentWillReceiveProps(object nextProps) &#123;</div><div class="line">	<span class="comment">//当props改变时，组件会执行获取新props的钩子函数，处理一些逻辑</span></div><div class="line">&#125;</div><div class="line"></div><div class="line">componentWillUpdate(object nextProps, object nextState) &#123;</div><div class="line">	<span class="comment">//当state改变时，组件会重新渲染，更新前的钩子函数中，可以拿到新的state和props处理一些逻辑</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <h2 id="React-v16版本新特性"><a href="#React-v16版本新特性" class="headerlink" title="React v16版本新特性"></a>React v16版本新特性</h2><h4 id="内核改变-react-fiber"><a href="#内核改变-react-fiber" class="headerlink" title="内核改变 react-fiber"></a>内核改变 react-fiber</h4><p>react-fiber 是为了增强动画、布局、移动端手势领域的适用性，最重要的特性是对页面渲染的优化: 允许将渲染方面的工作拆分为多段进行。</p>
 <p>react-fiber 可以为我们提供如下几个功能：</p>
 <blockquote>
