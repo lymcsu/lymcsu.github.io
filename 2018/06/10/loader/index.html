@@ -87,20 +87,17 @@
 
 
 
-<meta name="description" content="Webpack LoaderLoader 的概念上面这张图大家应该都十分熟悉了，正如 webpack 官网中对其功能进行的介绍和宣传，它将所有的文件都视作一个模块，通过特定的加载方式可以把它们统一转化成浏览器支持的文件类型。那么实现这个转化过程的工具就是 Loader 。
-Loader 从本质上来说，就是一个 node 模块，在 webpack 定义中，Loader 导出一个函数，Loader 会">
+<meta name="description" content="Webpack LoaderLoader 的概念上面这张图大家应该都十分熟悉了，正如 webpack 官网中对其功能进行的介绍和宣传，它将所有的文件都视作一个模块，通过特定的加载方式可以把它们统一转化成浏览器支持的文件类型。那么实现这个转化过程的工具就是 Loader 。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Webpack Loader小结">
 <meta property="og:url" content="http://yoursite.com/2018/06/10/loader/index.html">
 <meta property="og:site_name" content="民谣码农">
-<meta property="og:description" content="Webpack LoaderLoader 的概念上面这张图大家应该都十分熟悉了，正如 webpack 官网中对其功能进行的介绍和宣传，它将所有的文件都视作一个模块，通过特定的加载方式可以把它们统一转化成浏览器支持的文件类型。那么实现这个转化过程的工具就是 Loader 。
-Loader 从本质上来说，就是一个 node 模块，在 webpack 定义中，Loader 导出一个函数，Loader 会">
+<meta property="og:description" content="Webpack LoaderLoader 的概念上面这张图大家应该都十分熟悉了，正如 webpack 官网中对其功能进行的介绍和宣传，它将所有的文件都视作一个模块，通过特定的加载方式可以把它们统一转化成浏览器支持的文件类型。那么实现这个转化过程的工具就是 Loader 。">
 <meta property="og:image" content="https://user-gold-cdn.xitu.io/2018/1/25/1612c43c7609c69d?w=1083&h=420&f=png&s=51464">
-<meta property="og:updated_time" content="2018-06-28T02:21:02.510Z">
+<meta property="og:updated_time" content="2018-06-28T02:22:35.176Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Webpack Loader小结">
-<meta name="twitter:description" content="Webpack LoaderLoader 的概念上面这张图大家应该都十分熟悉了，正如 webpack 官网中对其功能进行的介绍和宣传，它将所有的文件都视作一个模块，通过特定的加载方式可以把它们统一转化成浏览器支持的文件类型。那么实现这个转化过程的工具就是 Loader 。
-Loader 从本质上来说，就是一个 node 模块，在 webpack 定义中，Loader 导出一个函数，Loader 会">
+<meta name="twitter:description" content="Webpack LoaderLoader 的概念上面这张图大家应该都十分熟悉了，正如 webpack 官网中对其功能进行的介绍和宣传，它将所有的文件都视作一个模块，通过特定的加载方式可以把它们统一转化成浏览器支持的文件类型。那么实现这个转化过程的工具就是 Loader 。">
 <meta name="twitter:image" content="https://user-gold-cdn.xitu.io/2018/1/25/1612c43c7609c69d?w=1083&h=420&f=png&s=51464">
 
 
@@ -337,6 +334,7 @@ Loader 从本质上来说，就是一个 node 模块，在 webpack 定义中，L
 
       
         <h1 id="Webpack-Loader"><a href="#Webpack-Loader" class="headerlink" title="Webpack Loader"></a>Webpack Loader</h1><h3 id="Loader-的概念"><a href="#Loader-的概念" class="headerlink" title="Loader 的概念"></a>Loader 的概念</h3><p><img src="https://user-gold-cdn.xitu.io/2018/1/25/1612c43c7609c69d?w=1083&amp;h=420&amp;f=png&amp;s=51464" alt="webpack"><br>上面这张图大家应该都十分熟悉了，正如 webpack 官网中对其功能进行的介绍和宣传，它将所有的文件都视作一个模块，通过特定的加载方式可以把它们统一转化成浏览器支持的文件类型。那么实现这个转化过程的工具就是 Loader 。</p>
+<a id="more"></a>
 <p>Loader 从本质上来说，就是一个 node 模块，在 webpack 定义中，Loader 导出一个函数，Loader 会在转换源模块（resource）的时候调用该函数。在这个函数内部，我们可以通过传入 this 上下文给 Loader API 来使用它们。通过 Loader 处理后的源模块返回给下一个 Loader 进行链式处理。</p>
 <h3 id="Loader-的规则"><a href="#Loader-的规则" class="headerlink" title="Loader 的规则"></a>Loader 的规则</h3><p>一个 Loader 的职责是单一的，只需完成一种转换。如果一个源文件需要经历多步转换才能正常使用，就通过多个 Loader 去转换。</p>
 <p>在调用多个 Loader 去转换一个文件时，每个 Loader 会链式的顺序执行，执行顺序是<strong>从右往左</strong>，第一个 Loader 将会拿到需处理模块的原内容，上一个 Loader 处理后的结果会传给下一个接着处理，最后的 Loader 将处理后的最终结果返回给 Webpack 的 require 方法。</p>
